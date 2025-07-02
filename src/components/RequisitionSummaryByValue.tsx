@@ -17,30 +17,30 @@ const RequisitionSummaryByValue = () => {
     { desc: "Total In USD", received: "2,005,653.82", onProcess: "504,115.35", completed: "400,730.74", cancelled: "61.51", balance: "2,108,976.89" }
   ];
 
-  const TableCard = ({ title, data, colorScheme }: { title: string, data: any[], colorScheme: string }) => (
-    <Card className="shadow-lg hover:shadow-xl transition-all duration-300">
-      <CardHeader className={`${colorScheme} text-white`}>
-        <CardTitle className="text-center text-xl font-bold">{title}</CardTitle>
+  const TableCard = ({ title, data }: { title: string, data: any[] }) => (
+    <Card className="border border-slate-200">
+      <CardHeader className="bg-white border-b border-slate-200">
+        <CardTitle className="text-center text-lg font-semibold text-slate-900">{title}</CardTitle>
       </CardHeader>
       <CardContent className="p-0">
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead>
-              <tr className="bg-slate-100">
-                <th className="px-4 py-3 text-left font-semibold text-slate-700">Desc</th>
-                <th className="px-4 py-3 text-right font-semibold text-slate-700">Received</th>
-                <th className="px-4 py-3 text-right font-semibold text-slate-700">On-Process</th>
-                <th className="px-4 py-3 text-right font-semibold text-slate-700">Completed</th>
-                <th className="px-4 py-3 text-right font-semibold text-slate-700">Cancelled</th>
-                <th className="px-4 py-3 text-right font-semibold text-slate-700">Balance</th>
+              <tr className="bg-slate-50 border-b border-slate-200">
+                <th className="px-4 py-3 text-left font-medium text-slate-700">Desc</th>
+                <th className="px-4 py-3 text-right font-medium text-slate-700">Received</th>
+                <th className="px-4 py-3 text-right font-medium text-slate-700">On-Process</th>
+                <th className="px-4 py-3 text-right font-medium text-slate-700">Completed</th>
+                <th className="px-4 py-3 text-right font-medium text-slate-700">Cancelled</th>
+                <th className="px-4 py-3 text-right font-medium text-slate-700">Balance</th>
               </tr>
             </thead>
             <tbody>
               {data.map((row, index) => (
                 <tr 
                   key={index} 
-                  className={`border-b hover:bg-slate-50 transition-colors ${
-                    row.desc.includes('Total') ? 'bg-slate-50 font-semibold' : ''
+                  className={`border-b border-slate-100 hover:bg-slate-25 ${
+                    row.desc.includes('Total') ? 'bg-slate-50 font-medium' : ''
                   }`}
                 >
                   <td className="px-4 py-3">
@@ -49,10 +49,10 @@ const RequisitionSummaryByValue = () => {
                     </Badge>
                   </td>
                   <td className="px-4 py-3 text-right font-mono text-sm">{row.received}</td>
-                  <td className="px-4 py-3 text-right font-mono text-sm text-blue-600">{row.onProcess}</td>
-                  <td className="px-4 py-3 text-right font-mono text-sm text-green-600">{row.completed}</td>
-                  <td className="px-4 py-3 text-right font-mono text-sm text-red-600">{row.cancelled}</td>
-                  <td className="px-4 py-3 text-right font-mono text-sm font-semibold">{row.balance}</td>
+                  <td className="px-4 py-3 text-right font-mono text-sm">{row.onProcess}</td>
+                  <td className="px-4 py-3 text-right font-mono text-sm">{row.completed}</td>
+                  <td className="px-4 py-3 text-right font-mono text-sm">{row.cancelled}</td>
+                  <td className="px-4 py-3 text-right font-mono text-sm font-medium">{row.balance}</td>
                 </tr>
               ))}
             </tbody>
@@ -63,9 +63,9 @@ const RequisitionSummaryByValue = () => {
   );
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-      <TableCard title="RFM" data={rfmData} colorScheme="bg-gradient-to-r from-blue-600 to-blue-700" />
-      <TableCard title="RFS" data={rfsData} colorScheme="bg-gradient-to-r from-purple-600 to-purple-700" />
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <TableCard title="RFM" data={rfmData} />
+      <TableCard title="RFS" data={rfsData} />
     </div>
   );
 };

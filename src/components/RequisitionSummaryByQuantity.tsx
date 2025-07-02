@@ -15,30 +15,30 @@ const RequisitionSummaryByQuantity = () => {
     { desc: "Total", received: "110", onProcess: "45", completed: "90", cancelled: "-5", balance: "70" }
   ];
 
-  const TableCard = ({ title, data, colorScheme }: { title: string, data: any[], colorScheme: string }) => (
-    <Card className="shadow-lg hover:shadow-xl transition-all duration-300">
-      <CardHeader className={`${colorScheme} text-white`}>
-        <CardTitle className="text-center text-xl font-bold">{title}</CardTitle>
+  const TableCard = ({ title, data }: { title: string, data: any[] }) => (
+    <Card className="border border-slate-200">
+      <CardHeader className="bg-white border-b border-slate-200">
+        <CardTitle className="text-center text-lg font-semibold text-slate-900">{title}</CardTitle>
       </CardHeader>
       <CardContent className="p-0">
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead>
-              <tr className="bg-slate-100">
-                <th className="px-4 py-3 text-left font-semibold text-slate-700">Desc</th>
-                <th className="px-4 py-3 text-right font-semibold text-slate-700">Received</th>
-                <th className="px-4 py-3 text-right font-semibold text-slate-700">On-Process</th>
-                <th className="px-4 py-3 text-right font-semibold text-slate-700">Completed</th>
-                <th className="px-4 py-3 text-right font-semibold text-slate-700">Cancelled</th>
-                <th className="px-4 py-3 text-right font-semibold text-slate-700">Balance</th>
+              <tr className="bg-slate-50 border-b border-slate-200">
+                <th className="px-4 py-3 text-left font-medium text-slate-700">Desc</th>
+                <th className="px-4 py-3 text-right font-medium text-slate-700">Received</th>
+                <th className="px-4 py-3 text-right font-medium text-slate-700">On-Process</th>
+                <th className="px-4 py-3 text-right font-medium text-slate-700">Completed</th>
+                <th className="px-4 py-3 text-right font-medium text-slate-700">Cancelled</th>
+                <th className="px-4 py-3 text-right font-medium text-slate-700">Balance</th>
               </tr>
             </thead>
             <tbody>
               {data.map((row, index) => (
                 <tr 
                   key={index} 
-                  className={`border-b hover:bg-slate-50 transition-colors ${
-                    row.desc === 'Total' ? 'bg-slate-50 font-semibold' : ''
+                  className={`border-b border-slate-100 hover:bg-slate-25 ${
+                    row.desc === 'Total' ? 'bg-slate-50 font-medium' : ''
                   }`}
                 >
                   <td className="px-4 py-3">
@@ -46,11 +46,11 @@ const RequisitionSummaryByQuantity = () => {
                       {row.desc}
                     </Badge>
                   </td>
-                  <td className="px-4 py-3 text-right font-mono text-lg">{row.received}</td>
-                  <td className="px-4 py-3 text-right font-mono text-lg text-blue-600">{row.onProcess}</td>
-                  <td className="px-4 py-3 text-right font-mono text-lg text-green-600">{row.completed}</td>
-                  <td className="px-4 py-3 text-right font-mono text-lg text-red-600">{row.cancelled}</td>
-                  <td className="px-4 py-3 text-right font-mono text-lg font-semibold">{row.balance}</td>
+                  <td className="px-4 py-3 text-right font-mono">{row.received}</td>
+                  <td className="px-4 py-3 text-right font-mono">{row.onProcess}</td>
+                  <td className="px-4 py-3 text-right font-mono">{row.completed}</td>
+                  <td className="px-4 py-3 text-right font-mono">{row.cancelled}</td>
+                  <td className="px-4 py-3 text-right font-mono font-medium">{row.balance}</td>
                 </tr>
               ))}
             </tbody>
@@ -61,9 +61,9 @@ const RequisitionSummaryByQuantity = () => {
   );
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-      <TableCard title="RFM" data={rfmData} colorScheme="bg-gradient-to-r from-green-600 to-green-700" />
-      <TableCard title="RFS" data={rfsData} colorScheme="bg-gradient-to-r from-teal-600 to-teal-700" />
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <TableCard title="RFM" data={rfmData} />
+      <TableCard title="RFS" data={rfsData} />
     </div>
   );
 };
