@@ -5,19 +5,19 @@ const RequisitionSummaryByQuantity = () => {
   const summaryData = [
     { label: "Received RFS", value: "14" },
     { label: "Received RFM", value: "35" },
-    { label: "Total", value: "22", isTotal: true },
-    { label: "On Process RFS", value: "" },
-    { label: "On Process RFM", value: "" },
+    { label: "Total", value: "49", isTotal: true },
+    { label: "On Process RFS", value: "8" },
+    { label: "On Process RFM", value: "8" },
     { label: "Total", value: "16", isTotal: true },
     { label: "Completed RFS", value: "6" },
     { label: "Completed RFM", value: "5" },
-    { label: "Total", value: "8", isTotal: true },
+    { label: "Total", value: "11", isTotal: true },
     { label: "Cancelled RFS", value: "0" },
     { label: "Cancelled RFM", value: "0" },
     { label: "Total", value: "0", isTotal: true },
-    { label: "Balance RFS", value: "30" },
-    { label: "Balance RFM", value: "34" },
-    { label: "Total", value: "40", isTotal: true }
+    { label: "Balance RFS", value: "8" },
+    { label: "Balance RFM", value: "30" },
+    { label: "Total", value: "38", isTotal: true }
   ];
 
   return (

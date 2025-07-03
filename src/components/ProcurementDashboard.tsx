@@ -16,8 +16,10 @@ const ProcurementDashboard = () => {
       <div className="flex justify-between items-start">
         <div className="space-y-2">
           <h1 className="text-2xl font-semibold text-gray-900">
-            Procurement Progress Report - [January 2025 - December 2025]
+            Procurement Progress Report
           </h1>
+          <p className="text-lg text-gray-600">Januari 2025 - Desember 2025</p>
+          <p className="text-sm text-gray-500">Asumsi kurs: 1 USD = IDR 15,000</p>
         </div>
         <Button className="bg-green-600 hover:bg-green-700 text-white">
           <Download className="w-4 h-4 mr-2" />
@@ -29,13 +31,13 @@ const ProcurementDashboard = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Quantity Section */}
         <div className="space-y-4">
-          <h2 className="text-lg font-medium text-gray-900">Quantity (EA)</h2>
+          <h2 className="text-lg font-medium text-gray-900 text-left">Requisition Summary by Quantity (EA)</h2>
           <RequisitionSummaryByQuantity />
         </div>
 
         {/* Total Value Section */}
         <div className="space-y-4">
-          <h2 className="text-lg font-medium text-gray-900">Total Value (IDR)</h2>
+          <h2 className="text-lg font-medium text-gray-900 text-left">Requisition Summary by Value</h2>
           <RequisitionSummaryByValue />
         </div>
       </div>

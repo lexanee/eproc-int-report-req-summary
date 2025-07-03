@@ -3,21 +3,21 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const RequisitionSummaryByValue = () => {
   const summaryData = [
-    { label: "Received RFS", value: "5,990,355,054" },
-    { label: "Received RFM", value: "11,427,668,240" },
-    { label: "Total IDR", value: "17,427,137,394", isTotal: true },
-    { label: "On Process RFS", value: "2,300,000,000" },
-    { label: "On Process RFM", value: "4,899,057,080" },
-    { label: "Total IDR", value: "6,729,556,080", isTotal: true },
-    { label: "Completed RFS", value: "3,795,034,054" },
-    { label: "Completed RFM", value: "1,800,000,000" },
-    { label: "Total IDR", value: "5,595,054,054", isTotal: true },
-    { label: "Cancelled RFS", value: "0" },
-    { label: "Cancelled RFM", value: "0" },
-    { label: "Total IDR", value: "0", isTotal: true },
-    { label: "Balance RFS", value: "4,481,002,000" },
-    { label: "Balance RFM", value: "14,126,823,320" },
-    { label: "Total IDR", value: "18,607,825,320", isTotal: true }
+    { label: "Received IDR", value: "17,418,023,294" },
+    { label: "Received USD", value: "450,000" },
+    { label: "Total Value in USD", value: "1,563,802", isTotal: true },
+    { label: "On Process IDR", value: "7,199,057,080" },
+    { label: "On Process USD", value: "150,000" },
+    { label: "Total Value in USD", value: "619,906", isTotal: true },
+    { label: "Completed IDR", value: "5,595,034,054" },
+    { label: "Completed USD", value: "200,000" },
+    { label: "Total Value in USD", value: "559,503", isTotal: true },
+    { label: "Cancelled IDR", value: "0" },
+    { label: "Cancelled USD", value: "0" },
+    { label: "Total Value in USD", value: "0", isTotal: true },
+    { label: "Balance IDR", value: "18,607,825,320" },
+    { label: "Balance USD", value: "500,000" },
+    { label: "Total Value in USD", value: "1,860,783", isTotal: true }
   ];
 
   return (
