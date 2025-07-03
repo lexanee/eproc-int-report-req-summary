@@ -176,7 +176,7 @@ const RequisitionSummaryByValue = () => {
       className="border border-slate-200 shadow-sm"
       styles={{
         body: { padding: 0 },
-        header: { textAlign: "center" },
+        header: { textAlign: "center", backgroundColor: "#f0f0f0" },
       }}
     >
       <div className="overflow-x-auto">
@@ -200,6 +200,12 @@ const RequisitionSummaryByValue = () => {
       <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-4 sm:mb-6 text-center">
         Total Value
       </h3>
+      <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-sm sm:text-base text-gray-500 mb-4">
+        <i className="text-xs sm:text-sm">
+          *The "Total In USD" value has been converted using assumed exchange
+          rate of 1 USD = <Tag color="red">IDR 16,250</Tag>
+        </i>
+      </div>
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 sm:gap-6">
         <TableCard title="RFM" data={rfmData} />
         <TableCard title="RFS" data={rfsData} />
