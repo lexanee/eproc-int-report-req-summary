@@ -160,7 +160,7 @@ const RequisitionSummaryByQuantity = () => {
       className="border border-slate-200 shadow-sm"
       styles={{
         body: { padding: 0 },
-        header: { textAlign: "center" },
+        header: { textAlign: "center", backgroundColor: "#f0f0f0" },
       }}
     >
       <div className="overflow-x-auto">
@@ -184,6 +184,11 @@ const RequisitionSummaryByQuantity = () => {
       <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-4 sm:mb-6 text-center">
         Quantity
       </h3>
+      <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-sm sm:text-base text-gray-500 mb-4">
+        <i className="text-xs sm:text-sm">
+          *This figure represents the total count of requisitions.
+        </i>
+      </div>
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 sm:gap-6">
         <TableCard title="RFM" data={rfmData} />
         <TableCard title="RFS" data={rfsData} />
