@@ -76,7 +76,7 @@ const RequisitionSummaryByQuantity = () => {
         if (text === "IDR") {
           return (
             <Tag
-              color="red"
+              color="green"
               className="text-center px-3 py-0.5 rounded-md text-xs"
             >
               {text}
@@ -157,10 +157,16 @@ const RequisitionSummaryByQuantity = () => {
   }) => (
     <Card
       title={title}
-      className="border border-slate-200 shadow-sm"
+      className="border border-slate-200"
       styles={{
         body: { padding: 0 },
-        header: { textAlign: "center", backgroundColor: "#f0f0f0" },
+        header: {
+          textAlign: "center",
+          backgroundColor: "#f0f0f0",
+          minHeight: 46,
+          paddingTop: 4,
+          paddingBottom: 4,
+        },
       }}
     >
       <div className="overflow-x-auto">
@@ -182,14 +188,14 @@ const RequisitionSummaryByQuantity = () => {
   return (
     <div>
       <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-4 sm:mb-6 text-center">
-        Quantity
+        By Quantity
       </h3>
       <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-sm sm:text-base text-gray-500 mb-4">
         <i className="text-xs sm:text-sm">
-          *This figure represents the total count of requisitions.
+          {"*) "}This figure represents the total count of requisitions.
         </i>
       </div>
-      <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 sm:gap-6">
+      <div className="flex flex-col gap-4 sm:gap-6">
         <TableCard title="RFM" data={rfmData} />
         <TableCard title="RFS" data={rfsData} />
       </div>

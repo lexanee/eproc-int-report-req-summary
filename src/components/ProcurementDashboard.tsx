@@ -1,6 +1,9 @@
 import RequisitionSummaryByValue from "./RequisitionSummaryByValue";
 import RequisitionSummaryByQuantity from "./RequisitionSummaryByQuantity";
-import { Button, Tag } from "antd";
+import { Button } from "antd";
+import ListOfTenders from "./ListOfTenders";
+import HighlightedRFS from "./HighlightedRFS";
+import HighlightedRFM from "./HighlightedRFM";
 
 const ProcurementDashboard = () => {
   return (
@@ -56,12 +59,52 @@ const ProcurementDashboard = () => {
                 {/* Requisition Summary Content */}
                 <div className="space-y-8 sm:space-y-16">
                   <RequisitionSummaryByQuantity />
+                  <div className="border-b border-gray-200"></div>
                   <RequisitionSummaryByValue />
                 </div>
               </div>
             </div>
           </div>
         </div>
+
+        {/* Highlighted RFM and RFS Section */}
+        {/* <div className="mb-6 sm:mb-8">
+          <div className="bg-white rounded-lg shadow-sm p-6 sm:p-8">
+            <div className="space-y-6 sm:space-y-8">
+              <div>
+                <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 pb-2 border-b border-gray-200">
+                  Highlighted RFM
+                </h2>
+                <div className="space-y-8 sm:space-y-16">
+                  <HighlightedRFM />
+                </div>
+              </div>
+              <div>
+                <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 pb-2 border-b border-gray-200">
+                  Highlighted RFS
+                </h2>
+                <div className="space-y-8 sm:space-y-16">
+                  <HighlightedRFS />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> */}
+        {/* List of Tenders */}
+        {/* <div className="mb-6 sm:mb-8">
+          <div className="bg-white rounded-lg shadow-sm p-6 sm:p-8">
+            <div className="space-y-6 sm:space-y-8">
+              <div>
+                <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 pb-2 border-b border-gray-200">
+                  List of Tenders
+                </h2>
+                <div className="space-y-8 sm:space-y-16">
+                  <ListOfTenders />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> */}
       </div>
     </div>
   );
