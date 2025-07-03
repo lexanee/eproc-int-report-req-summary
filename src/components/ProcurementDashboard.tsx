@@ -1,52 +1,45 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Download } from "lucide-react";
-import RequisitionSummaryByQuantity from "./RequisitionSummaryByQuantity";
 import RequisitionSummaryByValue from "./RequisitionSummaryByValue";
-import HighlightedRFS from "./HighlightedRFS";
-import HighlightedRFM from "./HighlightedRFM";
-import ListOfTenders from "./ListOfTenders";
+import RequisitionSummaryByQuantity from "./RequisitionSummaryByQuantity";
 
 const ProcurementDashboard = () => {
   return (
-    <div className="container mx-auto p-6 space-y-8 max-w-7xl">
+    <div className="container mx-auto p-6 space-y-12">
       {/* Header Section */}
-      <div className="flex justify-between items-start">
-        <div className="space-y-2">
-          <h1 className="text-2xl font-semibold text-gray-900">
+      <div className="space-y-4">
+        <div className="flex items-center gap-4">
+          <h1 className="text-3xl font-semibold text-slate-900">
             Procurement Progress Report
           </h1>
-          <p className="text-lg text-gray-600">Januari 2025 - Desember 2025</p>
-          <p className="text-sm text-gray-500">Asumsi kurs: 1 USD = IDR 15,000</p>
+          <Badge variant="outline" className="bg-slate-100 text-slate-700 border-slate-300">
+            Active
+          </Badge>
         </div>
-        <Button className="bg-green-600 hover:bg-green-700 text-white">
-          <Download className="w-4 h-4 mr-2" />
-          Download
-        </Button>
-      </div>
-
-      {/* Summary Section */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        {/* Quantity Section */}
-        <div className="space-y-4">
-          <h2 className="text-lg font-medium text-gray-900 text-left">Requisition Summary by Quantity (EA)</h2>
-          <RequisitionSummaryByQuantity />
-        </div>
-
-        {/* Total Value Section */}
-        <div className="space-y-4">
-          <h2 className="text-lg font-medium text-gray-900 text-left">Requisition Summary by Value</h2>
-          <RequisitionSummaryByValue />
+        <p className="text-lg text-slate-600">
+          Januari 2025 - Desember 2025
+        </p>
+        <div className="flex items-center gap-4 text-sm text-slate-500">
+          <span>Asumsi Kurs 1US$</span>
+          <span className="font-mono text-base text-slate-800">16250</span>
         </div>
       </div>
 
-      {/* Highlighted Sections */}
-      <div className="space-y-8">
-        <HighlightedRFS />
-        <HighlightedRFM />
-        <ListOfTenders />
+      {/* Summary by Quantity Section - Now First */}
+      <div className="space-y-4">
+        <h2 className="text-xl font-semibold text-slate-900">
+          Requisition Summary by Quantity
+        </h2>
+        <RequisitionSummaryByQuantity />
+      </div>
+
+      {/* Summary by Value Section - Now Second */}
+      <div className="space-y-4">
+        <h2 className="text-xl font-semibold text-slate-900">
+          Requisition Summary by Value
+        </h2>
+        <RequisitionSummaryByValue />
       </div>
     </div>
   );
