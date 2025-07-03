@@ -53,15 +53,8 @@ const ProcurementDashboard = () => {
                   Requisition Summary
                 </h2>
 
-                <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-sm sm:text-base text-gray-500 mb-4">
-                  <span className="text-xs sm:text-sm">
-                    Assumed 1 USD Exchange Rate
-                  </span>
-                  <Tag color="blue">16,250</Tag>
-                </div>
-
                 {/* Requisition Summary Content */}
-                <div className="space-y-8 sm:space-y-12">
+                <div className="space-y-8 sm:space-y-16">
                   <RequisitionSummaryByQuantity />
                   <RequisitionSummaryByValue />
                 </div>
